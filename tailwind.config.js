@@ -2,7 +2,13 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'google': '#4285F4',
+        'github':'#171515',
+        'facebook':'#4267B2'
+      },
+    },
   },
   variants: {
     extend: {},

@@ -69,16 +69,21 @@ export const Auth = (props) => {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
-    <h1 className="text-3xl font-bold mb-4 text-white block mx-auto text-center"> Sign In to Continue</h1>
+    <h1 className="text-3xl font-bold mb-4 text-black block mx-auto text-center"> Please Sign In to Continue</h1>
 
-<button  onClick={signInWithGoogle} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 px-4 rounded w-48 mt-5">
+<button  onClick={signInWithGoogle} className="border-2 border-google hover:bg-google text-google hover:text-white font-semibold py-4 px-4 rounded-lg w-64 mt-5 flex justify-evenly items-center transition-all duration-450">
+<img src="/google.png" alt="google"height={"30px"} width={"30px"} style={{background:'white'}}className='bg-white rounded-full'/>
 Sign In With Google
 </button> 
-<button  onClick={signInWithGitHub} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 px-4 rounded w-48 mt-5">
+<button  onClick={signInWithGitHub} className="border-2 border-github hover:bg-github text-github hover:text-white font-semibold py-4 px-4 rounded-lg w-64 mt-5 flex justify-evenly items-center transition-all duration-450">
+<img src="/Github.png" alt="google" height={"30px"} width={"30px"} style={{background:'white'}}className='bg-white rounded-full' />
 Sign In With Github
+
 </button> 
-<button  onClick={signInWithfacebook} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 px-4 rounded w-48 mt-5">
+<button  onClick={signInWithfacebook} className="border-2 border-facebook hover:bg-facebook text-facebook hover:text-white font-semibold py-4 px-4 rounded-lg w-64 mt-5 flex justify-evenly items-center transition-all duration-450">
+<img src="/facebook.png" alt="google" height={"30px"} width={"30px"} />
 Sign In With facebook
+
 </button> 
     </div>
   );
