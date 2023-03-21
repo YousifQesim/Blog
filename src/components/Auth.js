@@ -1,4 +1,4 @@
-import { auth, googleProvider } from '../pages/firebase/Firebase';
+import { auth, googleProvider ,GitHub_provider,facebook_provider} from '../pages/firebase/Firebase';
 import {
   signInWithPopup,
   signOut,
@@ -17,6 +17,32 @@ export const Auth = (props) => {
   const signInWithGoogle = async () => {
     try {
       const result=await signInWithPopup(auth, googleProvider);
+      console.log(result)
+      cookie.set("auth-token",result.user.refreshToken)
+      setIsAuth(true);
+      const user = result.user;
+
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  const signInWithGitHub = async () => {
+    try {
+    
+      const result=await signInWithPopup(auth, GitHub_provider);
+      console.log(result)
+      cookie.set("auth-token",result.user.refreshToken)
+      setIsAuth(true);
+      const user = result.user;
+
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  const signInWithfacebook = async () => {
+    try {
+    
+      const result=await signInWithPopup(auth, facebook_provider);
       console.log(result)
       cookie.set("auth-token",result.user.refreshToken)
       setIsAuth(true);
@@ -47,6 +73,12 @@ export const Auth = (props) => {
 
 <button  onClick={signInWithGoogle} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 px-4 rounded w-48 mt-5">
 Sign In With Google
+</button> 
+<button  onClick={signInWithGitHub} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 px-4 rounded w-48 mt-5">
+Sign In With Github
+</button> 
+<button  onClick={signInWithfacebook} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 px-4 rounded w-48 mt-5">
+Sign In With facebook
 </button> 
     </div>
   );
